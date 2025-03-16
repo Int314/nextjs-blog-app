@@ -3,7 +3,7 @@ import { posts } from "../../data/posts";
 
 export default function BlogPage() {
   return (
-    <div>
+    <div className="container mx-auto py-8">
       <h1 className="text-2xl font-bold mb-4">ブログ一覧</h1>
       <ul>
         {posts.map((post) => {
