@@ -28,7 +28,16 @@ export default async function PostPage({
           <h1 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500">
             {post.title}
           </h1>
-          <div className="text-gray-200 leading-relaxed">{post.content}</div>
+
+          <div className="text-gray-200 leading-relaxed">
+            {(post.content as string)
+              .split("\n")
+              .map((line: string, index: number) => (
+                <p key={index} className="mb-4">
+                  {line}
+                </p>
+              ))}
+          </div>
         </article>
 
         <div className="mt-8 text-center">
