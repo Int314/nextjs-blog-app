@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function AboutPage() {
   return (
-    <main className="flex-grow flex flex-col items-center justify-center px-4 text-center">
+    <main className="bg-gradient-to-br from-gray-900 to-gray-700 flex-grow flex flex-col items-center justify-center px-4 text-center">
       <h1 className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 mb-6">
         About This Blog
       </h1>

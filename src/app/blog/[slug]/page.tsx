@@ -22,7 +22,7 @@ export default async function PostPage({
   }
 
   return (
-    <div className="container mx-auto py-8">
+    <div className="bg-gradient-to-br from-gray-900 to-gray-700 container mx-auto py-8">
       <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
       <p>{post.content}</p>
     </div>
