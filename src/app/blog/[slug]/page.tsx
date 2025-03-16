@@ -1,9 +1,21 @@
 import { notFound } from "next/navigation";
-import { posts } from "../../../data/posts";
 
-export default function PostPage({ params }: { params: { slug: string } }) {
-  const { slug } = params;
-  const post = posts.find((post) => post.slug === slug);
+export default async function PostPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  // ブログ記事データを取得
+  const res = await fetch(`http://localhost:3001/api/posts/${params.slug}`, {
+    cache: "no-cache",
+  });
+
+  // エラーレスポンスの場合は404エラーを表示
+  if (res.status === 404) {
+    notFound();
+  }
+
+  const post = await res.json();
 
   if (!post) {
     notFound();
